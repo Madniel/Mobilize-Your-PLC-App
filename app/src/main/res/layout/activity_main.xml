@@ -86,7 +86,8 @@
                 android:layout_marginLeft="17dp"
                 android:src="@drawable/password" />
         </RelativeLayout>
-        <TextView
+        <Button
+            android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -100,7 +101,8 @@
             android:paddingBottom="14dp"
             android:text="Login"
             android:textColor="#ffffff"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:onClick="openMainPage"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
