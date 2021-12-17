@@ -25,22 +25,15 @@
         tools:layout_editor_absoluteY="667dp" />
 
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="474dp"
-        android:layout_height="983dp"
-        android:src="@drawable/seledyn"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-50dp"
-        tools:layout_editor_absoluteY="0dp" />
-
     <ListView
+        android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/listView"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="247dp" />
 
     <TextView
         android:id="@+id/textView1"
@@ -50,9 +43,10 @@
         android:gravity="center"
         android:text="TextView1"
         android:textAlignment="center"
-        tools:layout_editor_absoluteX="-2dp"
-        tools:layout_editor_absoluteY="0dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toTopOf="@+id/button10"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-2dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -62,9 +56,10 @@
         android:gravity="center"
         android:text="TextView2"
         android:textAlignment="center"
-        tools:layout_editor_absoluteX="205dp"
-        tools:layout_editor_absoluteY="0dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toTopOf="@+id/button11"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="205dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

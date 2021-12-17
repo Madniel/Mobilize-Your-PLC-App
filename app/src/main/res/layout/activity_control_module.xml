@@ -23,12 +23,27 @@
         tools:layout_editor_absoluteX="301dp"
         tools:layout_editor_absoluteY="667dp"
         tools:ignore="MissingConstraints" />
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="474dp"
-        android:layout_height="983dp"
-        android:src="@drawable/green"
-        tools:layout_editor_absoluteX="-22dp"
-        tools:layout_editor_absoluteY="-30dp"
+
+    <EditText
+        android:id="@+id/input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="266dp"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
