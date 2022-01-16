@@ -33,7 +33,22 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="247dp" />
+        tools:layout_editor_absoluteY="247dp" >
+
+        <Button
+            android:id="@+id/button13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Device 2"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/button12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Device 1"
+            tools:ignore="MissingConstraints" />
+    </ListView>
 
     <TextView
         android:id="@+id/textView1"

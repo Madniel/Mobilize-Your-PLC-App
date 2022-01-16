@@ -46,4 +46,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Device 1"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="34dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Device 2"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="250dp"
+        tools:layout_editor_absoluteY="34dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
