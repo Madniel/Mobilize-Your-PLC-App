@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.mobilizeyourplc.model.ResObj;
 import com.example.mobilizeyourplc.remote.ApiUtils;
 import com.example.mobilizeyourplc.remote.UserService;
+import com.example.mobilizeyourplc.remote.message;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openMainPage(View view, final String username,final String password) {
-        Call call = userService.login(username,password);
+        Call call = userService.message(new message("It work", 1));
         call.enqueue(new Callback() {
             @Override
             public void onResponse(Call call, Response response) {

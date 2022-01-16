@@ -51,6 +51,10 @@ public class AlarmModule extends Activity implements View.OnClickListener {
                 intent = new Intent(this, MainActivity2.class);
                 startActivity(intent);
                 break;
+            case R.id.button12:
+                break;
+            case R.id.button13:
+                break;
             default:
                 break;
         }

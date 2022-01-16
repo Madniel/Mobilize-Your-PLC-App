@@ -62,23 +62,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="205dp" />
-    <Button
-        android:id="@+id/button12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Device 1"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="587dp" />
 
-    <Button
-        android:id="@+id/button13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Device 2"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="291dp"
-        tools:layout_editor_absoluteY="587dp" />
-
+<!--    Insert Switch-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
