@@ -15,14 +15,6 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="28dp" />
 
-    <Button
-        android:id="@+id/button11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="301dp" />
 
 
     <ListView
@@ -35,14 +27,13 @@
         tools:layout_editor_absoluteX="-64dp"
         tools:layout_editor_absoluteY="116dp">
 
-
     </ListView>
 
     <Switch
         android:id="@+id/simpleSwitch"
         android:layout_width="202dp"
         android:layout_height="56dp"
-        app:layout_constraintBottom_toTopOf="@+id/button11"
+        app:layout_constraintBottom_toTopOf="@+id/button10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView1"
         app:layout_constraintTop_toTopOf="@+id/listView" />

@@ -12,4 +12,7 @@
     <string name="choose_device">Choose Device</string>
     <string name="control_module">Control Module</string>
     <string name="title_activity_main3">MainActivity3</string>
+    <string name="title_activity_statistic2">statistic2</string>
+    <string name="title_activity_statistic3">statistic3</string>
+    <string name="title_activity_statistic4">statistic4</string>
 </resources>

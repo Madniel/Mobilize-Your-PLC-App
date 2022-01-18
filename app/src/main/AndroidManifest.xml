@@ -13,6 +13,21 @@
         android:theme="@style/Theme.MobilizeYourPLC"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".statistic4"
+            android:exported="false"
+            android:label="@string/title_activity_statistic4"
+            android:theme="@style/Theme.MobilizeYourPLC.NoActionBar" />
+        <activity
+            android:name=".statistic3"
+            android:exported="false"
+            android:label="@string/title_activity_statistic3"
+            android:theme="@style/Theme.MobilizeYourPLC.NoActionBar" />
+        <activity
+            android:name=".statistic2"
+            android:exported="false"
+            android:label="@string/title_activity_statistic2"
+            android:theme="@style/Theme.MobilizeYourPLC.NoActionBar" />
+        <activity
             android:name=".MainActivity3"
             android:exported="false"
             android:label="@string/title_activity_main3"
