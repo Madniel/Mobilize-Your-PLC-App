@@ -19,7 +19,7 @@ public class device {
         return name;
     }
 
-    public int getid() {
+    public int getId() {
         return id;
     }
 }

@@ -9,9 +9,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.mobilizeyourplc.model.ResObj;
 import com.example.mobilizeyourplc.remote.ApiUtils;
 import com.example.mobilizeyourplc.remote.UserService;
+import com.example.mobilizeyourplc.remote.login;
 import com.example.mobilizeyourplc.remote.message;
 
 import retrofit2.Call;
@@ -64,28 +64,20 @@ public class MainActivity extends AppCompatActivity {
 
     public void openMainPage(View view, final String username,final String password) {
         Call call1 = userService.message(new message("It work", 1));
-        Call call = userService.login(username, password);
+        Call call = userService.login(new login(username, password));
         call.enqueue(new Callback() {
             @Override
             public void onResponse(Call call, Response response) {
                 if(response.isSuccessful()){
-                    ResObj resObj = (ResObj) response.body();
-                    if(resObj.getMessage().equals("true")){
-                        //login start main activity
-                        Intent intent = new Intent(MainActivity.this,
-                                MainActivity2.class);
-                        intent.putExtra("username", username);
-                        startActivity(intent);
-
-                    } else {
-                        Toast.makeText(MainActivity.this,
-                                "The username or password is incorrect",
-                                Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Toast.makeText(MainActivity.this,
-                            "Error! Please try again!",
-                            Toast.LENGTH_SHORT).show();
+                    //login start main activity
+                    Intent intent = new Intent(MainActivity.this,
+                            MainActivity2.class);
+                    intent.putExtra("username", username);
+                    startActivity(intent);
+                }
+                else
+                {
+                    Toast.makeText(MainActivity.this,"The username or password is incorrect.", Toast.LENGTH_SHORT).show();
                 }
             }
 

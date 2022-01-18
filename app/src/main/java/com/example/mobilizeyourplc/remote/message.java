@@ -8,13 +8,12 @@ public class message {
     @SerializedName("deviceId")
     private int deviceId;
 
-    public message(String title, int deviceId) {
-        this.message = title;
+    public message(String message, int deviceId) {
+        this.message = message;
         this.deviceId = deviceId;
-
     }
 
-    public String getTitle() {
+    public String getMessage() {
         return message;
     }
 

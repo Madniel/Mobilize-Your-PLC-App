@@ -2,7 +2,7 @@ package com.example.mobilizeyourplc.remote;
 
 import com.google.gson.annotations.SerializedName;
 
-public class parameters {
+public class parameter {
     @SerializedName("parameterName")
     private String parameterName;
 
@@ -12,7 +12,7 @@ public class parameters {
     @SerializedName("value")
     private int value;
 
-    public parameters(String parameterName, int deviceId, int value) {
+    public parameter(String parameterName, int deviceId, int value) {
         this.parameterName = parameterName;
         this.deviceId = deviceId;
         this.value = value;
