@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -113,6 +112,8 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             default:
+                intent = new Intent(this, MainActivity2.class);
+                startActivity(intent);
                 break;
         }
     }

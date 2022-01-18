@@ -10,7 +10,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class AlarmModule extends Activity implements View.OnClickListener {
+public class AlarmModule extends Activity  {
 
     private static final String TAG = "AlarmModule";
 
@@ -20,9 +20,9 @@ public class AlarmModule extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_alarm_module);
 
         Button ten = (Button) findViewById(R.id.button6);
-        ten.setOnClickListener(this); // calling onClick() method
+//        ten.setOnClickListener(this); // calling onClick() method
         Button eleven = (Button) findViewById(R.id.button7);
-        eleven.setOnClickListener(this);
+//        eleven.setOnClickListener(this);
 
         Log.d(TAG, "onCreate: Started.");
         ListView mListView = (ListView) findViewById(R.id.listView);
@@ -40,7 +40,7 @@ public class AlarmModule extends Activity implements View.OnClickListener {
         mListView.setAdapter(adapter);
     }
 
-    @Override
+//    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button10:

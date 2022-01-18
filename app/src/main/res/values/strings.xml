@@ -11,4 +11,5 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="choose_device">Choose Device</string>
     <string name="control_module">Control Module</string>
+    <string name="title_activity_main3">MainActivity3</string>
 </resources>

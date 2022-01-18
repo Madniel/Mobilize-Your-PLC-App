@@ -66,7 +66,7 @@ public class AlarmListAdapter extends ArrayAdapter<Alarm> {
             convertView = inflater.inflate(mResource, parent, false);
             holder= new ViewHolder();
             holder.name = (TextView) convertView.findViewById(R.id.textView1);
-            //holder.time = (TextView) convertView.findViewById(R.id.textView2);
+//            holder.time = (TextView) convertView.findViewById(R.id.textView2);
 
             result = convertView;
 
@@ -84,7 +84,7 @@ public class AlarmListAdapter extends ArrayAdapter<Alarm> {
         lastPosition = position;
 
         holder.name.setText(person.getName());
-        holder.time.setText(person.getTime());
+//        holder.time.setText(person.getTime());
 
 
         return convertView;
