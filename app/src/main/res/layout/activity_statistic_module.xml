@@ -123,14 +123,18 @@
         android:layout_height="18dp"
         android:ems="10"
         android:inputType="number"
-        tools:layout_editor_absoluteX="299dp"
-        tools:layout_editor_absoluteY="72dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toTopOf="@+id/editTextNumber3"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="299dp" />
 
     <com.github.mikephil.charting.charts.BarChart
         android:id='@+id/barChart'
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@+id/button7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumber5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,24 +10,25 @@
         android:id="@+id/button8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="24dp"
         android:text="Log Out"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="667dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="24dp"
         android:text="Back"
-        tools:layout_editor_absoluteX="301dp"
-        tools:layout_editor_absoluteY="667dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />
-
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

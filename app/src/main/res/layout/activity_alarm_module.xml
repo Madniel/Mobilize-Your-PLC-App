@@ -11,18 +11,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Log Out"
+        app:layout_constraintBottom_toBottomOf="@+id/listView"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="667dp" />
+        tools:layout_editor_absoluteX="28dp" />
 
     <Button
         android:id="@+id/button11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="301dp"
-        tools:layout_editor_absoluteY="667dp" />
+        tools:layout_editor_absoluteX="301dp" />
 
 
     <ListView
@@ -35,24 +35,32 @@
         tools:layout_editor_absoluteX="-64dp"
         tools:layout_editor_absoluteY="116dp">
 
-        <Switch
-            android:id="@+id/simpleSwitch"
-            android:layout_width="202dp"
-            android:layout_height="56dp" />
+
     </ListView>
+
+    <Switch
+        android:id="@+id/simpleSwitch"
+        android:layout_width="202dp"
+        android:layout_height="56dp"
+        app:layout_constraintBottom_toTopOf="@+id/button11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView1"
+        app:layout_constraintTop_toTopOf="@+id/listView" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="207dp"
         android:layout_height="56dp"
+        android:layout_marginEnd="204dp"
         android:layout_weight="66.6"
         android:gravity="center"
         android:text="TextView1"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/button10"
+        app:layout_constraintEnd_toEndOf="@+id/listView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-2dp" />
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

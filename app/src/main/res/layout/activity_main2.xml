@@ -7,17 +7,18 @@
     tools:context=".MainActivity2">
 
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="766dp"
-        android:layout_height="952dp"
-        android:layout_marginStart="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/button4"
+    <FrameLayout
+        android:layout_width="520dp"
+        android:layout_height="434dp"
+        android:background="@drawable/red_bg"
+
+        app:layout_constraintBottom_toBottomOf="@+id/planets_spinner"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.553"
-        app:srcCompat="@drawable/red_bg"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </FrameLayout>
 
     <Button
         android:id="@+id/button5"
@@ -32,9 +33,9 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Statistic Module"
+        android:layout_width="223dp"
+        android:layout_height="59dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,8 +44,8 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="179dp"
-        android:layout_height="51dp"
+        android:layout_width="223dp"
+        android:layout_height="59dp"
         android:text="Alarms Module"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,8 +55,8 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="179dp"
-        android:layout_height="48dp"
+        android:layout_width="223dp"
+        android:layout_height="59dp"
         android:text="@string/control_module"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,7 +70,7 @@
         android:layout_height="43dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.172" />
 
