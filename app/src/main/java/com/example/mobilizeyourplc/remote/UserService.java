@@ -19,7 +19,7 @@ public interface UserService {
     Call<Void> parameters(ArrayList<parameter> parameter);
 
     @GET("api/Device/GetDevices")
-    Call<ArrayList<device>> getDevices(@Body standardRequest request);
+    Call<ArrayList<device>> getDevices();
 
     @GET("api/Device/GetStatus")
     Call<status> status(@Body standardRequest request);

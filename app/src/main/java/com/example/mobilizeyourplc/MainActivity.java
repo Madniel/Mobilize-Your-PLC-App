@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.mobilizeyourplc.remote.ApiUtils;
 import com.example.mobilizeyourplc.remote.UserService;
 import com.example.mobilizeyourplc.remote.login;
-import com.example.mobilizeyourplc.remote.message;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         edtPassword = (EditText) findViewById(R.id.pass) ;
 
         button1 = (Button) findViewById(R.id.button);
-        userService = ApiUtils.getUserService();
+        userService = ApiUtils.getApiClient();
         button1.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -63,9 +62,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openMainPage(View view, final String username,final String password) {
-        Call call1 = userService.message(new message("It work", 1));
-        Call call = userService.login(new login(username, password));
-        call.enqueue(new Callback() {
+        userService.login(new login(username, password)).enqueue(new Callback() {
             @Override
             public void onResponse(Call call, Response response) {
                 if(response.isSuccessful()){
