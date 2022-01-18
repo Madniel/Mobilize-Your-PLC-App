@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1066155834085",
+    "project_id": "plcmobile",
+    "storage_bucket": "plcmobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066155834085:android:96a4b512fda6ec32c7320c",
+        "android_client_info": {
+          "package_name": "com.example.mobilizeyourplc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1066155834085-ccnhvs0pps570d05jd12vk46usbn76a0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW0NrxEK6gxCGtjBKynjU_5eR2GduHf4E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1066155834085-ccnhvs0pps570d05jd12vk46usbn76a0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
