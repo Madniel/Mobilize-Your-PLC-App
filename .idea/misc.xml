@@ -14,10 +14,19 @@
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_control_module.xml" value="0.25" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_main.xml" value="0.34962406015037595" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_main2.xml" value="0.25" />
+        <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_main3.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_parameters_module.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_statistic2.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_statistic3.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_statistic4.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_statistic_module.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_status_module.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/content_statistic4.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/fragment_first3.xml" value="0.20572916666666666" />
+        <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/fragment_second.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/fragment_second2.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/fragment_second3.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/fragment_second4.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/load_down_anim.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/temp.xml" value="0.20572916666666666" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/view_layout.xml" value="0.20572916666666666" />
