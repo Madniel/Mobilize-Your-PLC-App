@@ -47,9 +47,34 @@
         android:id="@+id/button3"
         android:layout_width="179dp"
         android:layout_height="48dp"
-        android:text="Control Module"
+        android:text="@string/control_module"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="123dp"
         tools:layout_editor_absoluteY="416dp"/>
+
+    <Spinner
+        android:id="@+id/planets_spinner"
+        android:layout_width="317dp"
+        android:layout_height="43dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.172" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="317dp"
+        android:layout_height="43dp"
+        android:text="@string/choose_device"
+        android:textStyle="bold"
+        android:textSize="12pt"
+        android:textColor="@color/white"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.109" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

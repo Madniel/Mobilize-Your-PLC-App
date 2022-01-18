@@ -63,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openMainPage(View view, final String username,final String password) {
-        Call call = userService.message(new message("It work", 1));
+        Call call1 = userService.message(new message("It work", 1));
+        Call call = userService.login(username, password);
         call.enqueue(new Callback() {
             @Override
             public void onResponse(Call call, Response response) {
@@ -71,15 +72,20 @@ public class MainActivity extends AppCompatActivity {
                     ResObj resObj = (ResObj) response.body();
                     if(resObj.getMessage().equals("true")){
                         //login start main activity
-                        Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                        Intent intent = new Intent(MainActivity.this,
+                                MainActivity2.class);
                         intent.putExtra("username", username);
                         startActivity(intent);
 
                     } else {
-                        Toast.makeText(MainActivity.this, "The username or password is incorrect", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this,
+                                "The username or password is incorrect",
+                                Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(MainActivity.this, "Error! Please try again!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,
+                            "Error! Please try again!",
+                            Toast.LENGTH_SHORT).show();
                 }
             }
 
