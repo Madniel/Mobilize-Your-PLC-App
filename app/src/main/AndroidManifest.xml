@@ -13,6 +13,21 @@
         android:theme="@style/Theme.MobilizeYourPLC"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Statuses"
+            android:exported="false" />
+        <activity
+            android:name=".CappingTime"
+            android:exported="false" />
+        <activity
+            android:name=".FillTime"
+            android:exported="false" />
+        <activity
+            android:name=".DispenseTime"
+            android:exported="false" />
+        <activity
+            android:name=".PicksCompleted"
+            android:exported="false" />
+        <activity
             android:name=".SetParameters"
             android:exported="false" />
 

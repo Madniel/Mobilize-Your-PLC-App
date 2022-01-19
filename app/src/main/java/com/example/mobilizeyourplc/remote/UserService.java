@@ -24,7 +24,7 @@ public interface UserService {
     Call<ArrayList<device>> getDevices();
 
     @GET("api/Device/GetStatus")
-    Call<status> status(@Body standardRequest request);
+    Call<ArrayList<status>> status(@Body standardRequest request);
 
     @GET("api/Device/GetAlarms")
     Call<ArrayList<Alarm>> alarms(@Body standardRequest request);
@@ -33,15 +33,15 @@ public interface UserService {
     Call<ArrayList<parameter>> parameters(@Body standardRequest request);
 
     @GET("api/Device/GetPicksCompleted")
-    Call<chartValue> picks(@Body standardRequest request);
+    Call<ArrayList<chartValue>> picks(@Body standardRequest request);
 
     @GET("api/Device/GetDispenseTime")
-    Call<chartValue> dispense(@Body standardRequest request);
+    Call<ArrayList<chartValue>> dispense(@Body standardRequest request);
 
     @GET("api/Device/GetFillTime")
-    Call<chartValue> fill(@Body standardRequest request);
+    Call<ArrayList<chartValue>> fill(@Body standardRequest request);
 
     @GET("api/Device/GetCappingTime")
-    Call<chartValue> capping(@Body standardRequest request);
+    Call<ArrayList<chartValue>> capping(@Body standardRequest request);
 
 }
