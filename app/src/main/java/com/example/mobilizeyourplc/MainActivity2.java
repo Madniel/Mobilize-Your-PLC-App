@@ -29,13 +29,8 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        selectedDevice = null;
-
-        api = ApiUtils.getApiClient();
-        LoadDevices();
-
         setContentView(R.layout.activity_main2);
-
+        spinner = (Spinner) findViewById(R.id.planets_spinner);
         Button five = (Button) findViewById(R.id.button5);
         five.setOnClickListener(this); // calling onClick() method
         Button four = (Button) findViewById(R.id.button4);
@@ -44,6 +39,10 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
         two.setOnClickListener(this);
         Button three = (Button) findViewById(R.id.button3);
         three.setOnClickListener(this);
+
+        selectedDevice = null;
+        api = ApiUtils.getApiClient();
+        LoadDevices();
     }
 
     private void LoadDevices() {
@@ -61,7 +60,6 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
                         adapter = new SpinAdapter(MainActivity2.this,
                                 android.R.layout.simple_spinner_item,
                                 response.body().toArray(new device[response.body().size()]));
-                        spinner = (Spinner) findViewById(R.id.planets_spinner);
                         spinner.setAdapter(adapter); // Set the custom adapter to the spinner
                         // You can create an anonymous listener to handle the event when is selected an spinner item
                         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

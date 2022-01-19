@@ -18,7 +18,7 @@ public interface UserService {
     Call<Void> login(@Body login login);
 
     @POST("api/User/SetParameters")
-    Call<Void> parameters(ArrayList<parameter> parameter);
+    Call<Void> setParameters(ArrayList<parameter> parameter);
 
     @GET("api/Device/GetDevices")
     Call<ArrayList<device>> getDevices();
