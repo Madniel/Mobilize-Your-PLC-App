@@ -29,48 +29,10 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        selectedDevice = null;
 
         api = ApiUtils.getApiClient();
-
-        api.getDevices().enqueue(new Callback<ArrayList<device>>() {
-            @Override
-            public void onResponse(Call<ArrayList<device>> call, Response<ArrayList<device>> response) {
-                if(response.isSuccessful())
-                {
-                    adapter = new SpinAdapter(MainActivity2.this,
-                            android.R.layout.simple_spinner_item,
-                            response.body().toArray(new device[response.body().size()]));
-                    spinner = (Spinner) findViewById(R.id.planets_spinner);
-                    spinner.setAdapter(adapter); // Set the custom adapter to the spinner
-                    // You can create an anonymous listener to handle the event when is selected an spinner item
-                    spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
-                        @Override
-                        public void onItemSelected(AdapterView<?> adapterView, View view,
-                                                   int position, long id) {
-                            // Here you get the current item (a User object) that is selected by its position
-                            selectedDevice = adapter.getItem(position);
-                            // Here you can do the action you want to...
-                            Toast.makeText(MainActivity2.this, "ID: " + selectedDevice.getId() + "\nName: " + selectedDevice.getName(),
-                                    Toast.LENGTH_SHORT).show();
-                        }
-                        @Override
-                        public void onNothingSelected(AdapterView<?> adapter) {
-                            selectedDevice = null;
-                        }
-                    });
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ArrayList<device>> call, Throwable t) {
-
-            }
-        });
-
-
+        LoadDevices();
 
         setContentView(R.layout.activity_main2);
 
@@ -82,6 +44,56 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
         two.setOnClickListener(this);
         Button three = (Button) findViewById(R.id.button3);
         three.setOnClickListener(this);
+    }
+
+    private void LoadDevices() {
+        api.getDevices().enqueue(new Callback<ArrayList<device>>() {
+            @Override
+            public void onResponse(Call<ArrayList<device>> call, Response<ArrayList<device>> response) {
+                if(response.isSuccessful())
+                {
+                    if(response.body().size() == 0)
+                    {
+                        Toast.makeText(MainActivity2.this,"No devices available..", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        adapter = new SpinAdapter(MainActivity2.this,
+                                android.R.layout.simple_spinner_item,
+                                response.body().toArray(new device[response.body().size()]));
+                        spinner = (Spinner) findViewById(R.id.planets_spinner);
+                        spinner.setAdapter(adapter); // Set the custom adapter to the spinner
+                        // You can create an anonymous listener to handle the event when is selected an spinner item
+                        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+                            @Override
+                            public void onItemSelected(AdapterView<?> adapterView, View view,
+                                                       int position, long id) {
+                                // Here you get the current item (a User object) that is selected by its position
+                                selectedDevice = adapter.getItem(position);
+                                // Here you can do the action you want to...
+                                Toast.makeText(MainActivity2.this, "ID: " + selectedDevice.getId() + "\nName: " + selectedDevice.getName(),
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                            @Override
+                            public void onNothingSelected(AdapterView<?> adapter) {
+                                selectedDevice = null;
+                            }
+                        });
+                    }
+                }
+                else
+                {
+                    Toast.makeText(MainActivity2.this,"Unable to download devices from the server.", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<device>> call, Throwable t) {
+                Toast.makeText(MainActivity2.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 
     @Override

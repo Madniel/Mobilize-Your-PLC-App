@@ -1,5 +1,7 @@
 package com.example.mobilizeyourplc.remote;
 
+import com.example.mobilizeyourplc.Alarm;
+
 import java.util.ArrayList;
 
 import retrofit2.Call;
@@ -25,7 +27,7 @@ public interface UserService {
     Call<status> status(@Body standardRequest request);
 
     @GET("api/Device/GetAlarms")
-    Call<alarms> alarms(@Body standardRequest request);
+    Call<ArrayList<Alarm>> alarms(@Body standardRequest request);
 
     @GET("api/Device/GetParameters")
     Call<ArrayList<parameter>> parameters(@Body standardRequest request);

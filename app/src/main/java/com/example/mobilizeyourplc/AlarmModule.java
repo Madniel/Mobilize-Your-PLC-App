@@ -7,17 +7,41 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import com.example.mobilizeyourplc.remote.ApiUtils;
+import com.example.mobilizeyourplc.remote.UserService;
+import com.example.mobilizeyourplc.remote.standardRequest;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class AlarmModule extends Activity  {
 
     private static final String TAG = "AlarmModule";
+    UserService api;
+    ListView mListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm_module);
+
+
+
+        api = ApiUtils.getApiClient();
+        if(MainActivity2.selectedDevice != null)
+        {
+            LoadAlarms(MainActivity2.selectedDevice.getId());
+        }
+        else
+        {
+            Toast.makeText(AlarmModule.this, "Device is not selected.", Toast.LENGTH_SHORT).show();
+        }
+
 
         Button ten = (Button) findViewById(R.id.button6);
 //        ten.setOnClickListener(this); // calling onClick() method
@@ -25,22 +49,36 @@ public class AlarmModule extends Activity  {
 //        eleven.setOnClickListener(this);
 
         Log.d(TAG, "onCreate: Started.");
-        ListView mListView = (ListView) findViewById(R.id.listView);
-
-        //Create the Alarm objects
-        Alarm undfvar = new Alarm("Undefined Variable","14:09 12-16-2021");
-        Alarm value = new Alarm("Value out of range","15:15 12-16-2021");
-
-        //Add the Alarm objects to an ArrayList
-        ArrayList<Alarm> peopleList = new ArrayList<>();
-        peopleList.add(undfvar);
-        peopleList.add(value);
-
-        AlarmListAdapter adapter = new AlarmListAdapter(this, R.layout.activity_alarm_module, peopleList);
-        mListView.setAdapter(adapter);
+        mListView = (ListView) findViewById(R.id.listView);
     }
 
-//    @Override
+    private void LoadAlarms(int id) {
+
+        api.alarms(new standardRequest(id)).enqueue(new Callback<ArrayList<Alarm>>() {
+            @Override
+            public void onResponse(Call<ArrayList<Alarm>> call, Response<ArrayList<Alarm>> response) {
+                if(response.isSuccessful())
+                {
+                    //Add the Alarm objects to an ArrayList
+                    ArrayList<Alarm> peopleList = response.body();
+
+                    AlarmListAdapter adapter = new AlarmListAdapter(AlarmModule.this, R.layout.activity_alarm_module, peopleList);
+                    mListView.setAdapter(adapter);
+                }
+                else
+                {
+                    Toast.makeText(AlarmModule.this,"Failed to retrieve alarms from the server.", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<Alarm>> call, Throwable t) {
+                Toast.makeText(AlarmModule.this,"Failed to retrieve alarms from the server.", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    //    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button10:

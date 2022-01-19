@@ -15,4 +15,9 @@
     <string name="title_activity_statistic2">statistic2</string>
     <string name="title_activity_statistic3">statistic3</string>
     <string name="title_activity_statistic4">statistic4</string>
+    <string name="title_activity_picks_completed">PicksCompleted</string>
+    <string name="title_activity_dispense_time">DispenseTime</string>
+    <string name="title_activity_fill_time">FillTime</string>
+    <string name="title_activity_capping_time">CappingTime</string>
+    <string name="title_activity_set_parameters">SetParameters</string>
 </resources>

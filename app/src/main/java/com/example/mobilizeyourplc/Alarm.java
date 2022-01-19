@@ -1,16 +1,25 @@
 package com.example.mobilizeyourplc;
 
 
+import com.google.gson.annotations.SerializedName;
+
+import java.util.Date;
+
 public class Alarm {
 
+    @SerializedName("description")
     private String name;
-    private String time;
+    @SerializedName("time")
+    private Date time;
 
-    public Alarm(String name, String time) {
+    public Alarm(String name, Date time) {
         this.name = name;
         this.time = time;
     }
 
+    public Alarm(){
+
+    }
     public String getName() {
         return name;
     }
@@ -19,10 +28,10 @@ public class Alarm {
         this.name = name;
     }
 
-    public String getTime() {
+    public Date getTime() {
         return time;
     }
-    public void setTime(String time) {
+    public void setTime(Date time) {
         this.time = time;
     }
 

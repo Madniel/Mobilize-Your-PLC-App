@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by User on 3/14/2017.
@@ -49,7 +50,7 @@ public class AlarmListAdapter extends ArrayAdapter<Alarm> {
     public View getView(int position, View convertView, ViewGroup parent) {
         //get the alarms information
         String name = getItem(position).getName();
-        String time = getItem(position).getTime();
+        Date time = getItem(position).getTime();
 
         //Create the alarm object with the information
         Alarm person = new Alarm(name,time);
