@@ -110,7 +110,7 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.button4:
-                intent = new Intent(this, StatisticModule.class);
+                intent = new Intent(this, FillTime.class);
                 startActivity(intent);
                 break;
             case R.id.button2:

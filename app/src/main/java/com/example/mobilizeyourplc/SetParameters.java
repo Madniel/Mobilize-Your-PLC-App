@@ -8,7 +8,6 @@ import android.widget.Toast;
 import com.example.mobilizeyourplc.remote.ApiUtils;
 import com.example.mobilizeyourplc.remote.UserService;
 import com.example.mobilizeyourplc.remote.parameter;
-import com.example.mobilizeyourplc.remote.standardRequest;
 
 import java.util.ArrayList;
 
@@ -25,7 +24,14 @@ public class SetParameters extends AppCompatActivity {
         api = ApiUtils.getApiClient();
         if(MainActivity2.selectedDevice != null)
         {
-            LoadParameters();
+            try
+            {
+                LoadParameters();
+            }
+            catch (Exception e)
+            {
+                Toast.makeText(SetParameters.this,"Failed to retrieve data from the server.", Toast.LENGTH_SHORT).show();
+            }
         }
         else
         {
@@ -34,7 +40,7 @@ public class SetParameters extends AppCompatActivity {
     }
 
     private void LoadParameters() {
-        api.parameters(new standardRequest(MainActivity2.selectedDevice.getId())).enqueue(new Callback<ArrayList<parameter>>() {
+        api.parameters(MainActivity2.selectedDevice.getId()).enqueue(new Callback<ArrayList<parameter>>() {
             @Override
             public void onResponse(Call<ArrayList<parameter>> call, Response<ArrayList<parameter>> response) {
                 if(response.isSuccessful())

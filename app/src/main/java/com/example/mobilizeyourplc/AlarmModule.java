@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import com.example.mobilizeyourplc.remote.ApiUtils;
 import com.example.mobilizeyourplc.remote.UserService;
-import com.example.mobilizeyourplc.remote.standardRequest;
 
 import java.util.ArrayList;
 
@@ -35,7 +34,14 @@ public class AlarmModule extends Activity  {
         api = ApiUtils.getApiClient();
         if(MainActivity2.selectedDevice != null)
         {
-            LoadAlarms(MainActivity2.selectedDevice.getId());
+            try
+            {
+                LoadAlarms(MainActivity2.selectedDevice.getId());
+            }
+            catch (Exception e)
+            {
+                Toast.makeText(AlarmModule.this,"Failed to retrieve alarms from the server.", Toast.LENGTH_SHORT).show();
+            }
         }
         else
         {
@@ -54,7 +60,7 @@ public class AlarmModule extends Activity  {
 
     private void LoadAlarms(int id) {
 
-        api.alarms(new standardRequest(id)).enqueue(new Callback<ArrayList<Alarm>>() {
+        api.alarms(id).enqueue(new Callback<ArrayList<Alarm>>() {
             @Override
             public void onResponse(Call<ArrayList<Alarm>> call, Response<ArrayList<Alarm>> response) {
                 if(response.isSuccessful())

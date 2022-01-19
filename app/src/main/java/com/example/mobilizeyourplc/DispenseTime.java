@@ -8,7 +8,6 @@ import android.widget.Toast;
 import com.example.mobilizeyourplc.remote.ApiUtils;
 import com.example.mobilizeyourplc.remote.UserService;
 import com.example.mobilizeyourplc.remote.chartValue;
-import com.example.mobilizeyourplc.remote.standardRequest;
 
 import java.util.ArrayList;
 
@@ -26,7 +25,14 @@ public class DispenseTime extends AppCompatActivity {
         api = ApiUtils.getApiClient();
         if(MainActivity2.selectedDevice != null)
         {
-            LoadData();
+            try
+            {
+                LoadData();
+            }
+            catch (Exception e)
+            {
+                Toast.makeText(DispenseTime.this,"Failed to retrieve data from the server.", Toast.LENGTH_SHORT).show();
+            }
         }
         else
         {
@@ -35,7 +41,7 @@ public class DispenseTime extends AppCompatActivity {
     }
 
     private void LoadData() {
-        api.dispense(new standardRequest(MainActivity2.selectedDevice.getId())).enqueue(new Callback<ArrayList<chartValue>>() {
+        api.dispense(MainActivity2.selectedDevice.getId()).enqueue(new Callback<ArrayList<chartValue>>() {
             @Override
             public void onResponse(Call<ArrayList<chartValue>> call, Response<ArrayList<chartValue>> response) {
                 if(response.isSuccessful())

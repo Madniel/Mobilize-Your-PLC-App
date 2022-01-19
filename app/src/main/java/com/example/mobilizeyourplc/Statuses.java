@@ -7,8 +7,6 @@ import android.widget.Toast;
 
 import com.example.mobilizeyourplc.remote.ApiUtils;
 import com.example.mobilizeyourplc.remote.UserService;
-import com.example.mobilizeyourplc.remote.chartValue;
-import com.example.mobilizeyourplc.remote.standardRequest;
 import com.example.mobilizeyourplc.remote.status;
 
 import java.util.ArrayList;
@@ -27,7 +25,14 @@ public class Statuses extends AppCompatActivity {
         api = ApiUtils.getApiClient();
         if(MainActivity2.selectedDevice != null)
         {
-            LoadData();
+            try
+            {
+                LoadData();
+            }
+            catch (Exception e)
+            {
+                Toast.makeText(Statuses.this,"Failed to retrieve statuses from the server.", Toast.LENGTH_SHORT).show();
+            }
         }
         else
         {
@@ -36,7 +41,7 @@ public class Statuses extends AppCompatActivity {
     }
 
     private void LoadData() {
-        api.status(new standardRequest(MainActivity2.selectedDevice.getId())).enqueue(new Callback<ArrayList<status>>() {
+        api.status(MainActivity2.selectedDevice.getId()).enqueue(new Callback<ArrayList<status>>() {
             @Override
             public void onResponse(Call<ArrayList<status>> call, Response<ArrayList<status>> response) {
                 if(response.isSuccessful())
