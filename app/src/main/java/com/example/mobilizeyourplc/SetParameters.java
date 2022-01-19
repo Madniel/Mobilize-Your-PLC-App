@@ -3,6 +3,7 @@ package com.example.mobilizeyourplc;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.mobilizeyourplc.remote.ApiUtils;
@@ -17,6 +18,7 @@ import retrofit2.Response;
 
 public class SetParameters extends AppCompatActivity {
     UserService api;
+    ListView mListView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +39,8 @@ public class SetParameters extends AppCompatActivity {
         {
             Toast.makeText(SetParameters.this, "Device is not selected.", Toast.LENGTH_SHORT).show();
         }
+
+        mListView = (ListView) findViewById(R.id.listView);
     }
 
     private void LoadParameters() {
@@ -48,6 +52,8 @@ public class SetParameters extends AppCompatActivity {
                     ArrayList<parameter> list = response.body();
 
                     //TODO listę parametrów wyświetlić na widoku.
+                    ParametersListAdapter adapter = new ParametersListAdapter(SetParameters.this, R.layout.activity_alarm_module, list);
+                    mListView.setAdapter(adapter);
                 }
                 else
                 {

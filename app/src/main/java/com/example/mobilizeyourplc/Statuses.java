@@ -1,9 +1,10 @@
 package com.example.mobilizeyourplc;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobilizeyourplc.remote.ApiUtils;
 import com.example.mobilizeyourplc.remote.UserService;
@@ -18,6 +19,7 @@ import retrofit2.Response;
 public class Statuses extends AppCompatActivity {
 
     UserService api;
+    ListView mListView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +40,8 @@ public class Statuses extends AppCompatActivity {
         {
             Toast.makeText(Statuses.this, "Device is not selected.", Toast.LENGTH_SHORT).show();
         }
+
+        mListView = (ListView) findViewById(R.id.listView);
     }
 
     private void LoadData() {
@@ -48,6 +52,8 @@ public class Statuses extends AppCompatActivity {
                 {
                     ArrayList<status> list = response.body();
                     //TODO wyświetlić listę statusów
+                    StatusesListAdapter adapter = new StatusesListAdapter(Statuses.this, R.layout.activity_alarm_module, list);
+                    mListView.setAdapter(adapter);
                 }
                 else
                 {

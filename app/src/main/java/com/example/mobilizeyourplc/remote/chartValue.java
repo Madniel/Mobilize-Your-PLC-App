@@ -2,6 +2,8 @@ package com.example.mobilizeyourplc.remote;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class chartValue {
@@ -14,6 +16,12 @@ public class chartValue {
     public Date getDateTime() {
         return dateTime;
     }
+
+    public String getStringTime() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        return dateFormat.format(getDateTime());
+    }
+
 
     public int getValue() {
         return value;

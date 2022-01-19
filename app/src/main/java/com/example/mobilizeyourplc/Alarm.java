@@ -3,6 +3,8 @@ package com.example.mobilizeyourplc;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Alarm {
@@ -30,6 +32,10 @@ public class Alarm {
 
     public Date getTime() {
         return time;
+    }
+    public String getStringTime() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        return dateFormat.format(getTime());
     }
     public void setTime(Date time) {
         this.time = time;

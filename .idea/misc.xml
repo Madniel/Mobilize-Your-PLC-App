@@ -11,16 +11,22 @@
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/drawable/red_border_rounded_cornwe.xml" value="0.3769230769230769" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/drawable/red_fill__rounded_color.xml" value="0.3769230769230769" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_alarm_module.xml" value="0.25" />
+        <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_capping_time.xml" value="0.1" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_control_module.xml" value="0.25" />
+        <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_dispense_time.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_fill_time.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_main.xml" value="0.34962406015037595" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_main2.xml" value="0.25" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_main3.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_parameters_module.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_picks_completed.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_set_parameters.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_statistic2.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_statistic3.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_statistic4.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_statistic_module.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_status_module.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/activity_statuses.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/content_statistic4.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/fragment_first3.xml" value="0.20572916666666666" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/fragment_second.xml" value="0.36666666666666664" />
@@ -33,11 +39,6 @@
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/layout/view_list.xml" value="0.20572916666666666" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3828125" />
         <entry key="..\:/Android/MobilizeYourPLC/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3828125" />
-        <entry key="..\:/Users/dklera.SM/source/repos/MobilizeYourPLC/app/src/main/res/layout/activity_control_module.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/dklera.SM/source/repos/MobilizeYourPLC/app/src/main/res/layout/activity_parameters_module.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/dklera.SM/source/repos/MobilizeYourPLC/app/src/main/res/layout/activity_statistic_module.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/dklera.SM/source/repos/MobilizeYourPLC/app/src/main/res/layout/activity_status_module.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/dklera.SM/source/repos/MobilizeYourPLC/app/src/main/res/layout/fragment_second.xml" value="0.20520833333333333" />
       </map>
     </option>
   </component>

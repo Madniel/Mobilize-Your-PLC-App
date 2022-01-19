@@ -1,13 +1,19 @@
 package com.example.mobilizeyourplc;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobilizeyourplc.remote.ApiUtils;
 import com.example.mobilizeyourplc.remote.UserService;
 import com.example.mobilizeyourplc.remote.chartValue;
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 
@@ -48,6 +54,25 @@ public class CappingTime extends AppCompatActivity {
                 {
                     ArrayList<chartValue> list = response.body();
                     //TODO wyświetlić wykres na podstawie tych danych
+                    BarChart barChart = findViewById(R.id.barChart);
+                    ArrayList<BarEntry> datas = new ArrayList<>();
+                    for (int i = 0; i < list.size(); i++){
+                        int value = list.get(i).getValue();
+                        String info = list.get(i).getStringTime();
+                        datas.add(new BarEntry(Float.parseFloat(info), value));
+                    }
+
+                    BarDataSet barDataSet = new BarDataSet(datas, "Capping Time");
+                    barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+                    barDataSet.setValueTextColor(Color.BLACK);
+                    barDataSet.setValueTextSize(16f);
+
+                    BarData barData = new BarData((barDataSet));
+
+                    barChart.setFitBars(true);
+                    barChart.setData(barData);
+                    barChart.getDescription().setText("Bar Chart Example");
+                    barChart.animateY(2000);
                 }
                 else
                 {

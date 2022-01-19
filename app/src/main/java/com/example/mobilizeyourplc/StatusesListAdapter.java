@@ -11,15 +11,16 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.example.mobilizeyourplc.remote.status;
+
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * Created by User on 3/14/2017.
  */
 
-public class AlarmListAdapter extends ArrayAdapter<Alarm> {
-    private static final String TAG = "AlarmListAdapter";
+public class StatusesListAdapter extends ArrayAdapter<status> {
+    private static final String TAG = "statusListAdapter";
 
     private Context mContext;
     private int mResource;
@@ -30,7 +31,7 @@ public class AlarmListAdapter extends ArrayAdapter<Alarm> {
      */
     private static class ViewHolder {
         TextView name;
-        TextView date;
+        TextView value;
     }
 
     /**
@@ -39,7 +40,7 @@ public class AlarmListAdapter extends ArrayAdapter<Alarm> {
      * @param resource
      * @param objects
      */
-    public AlarmListAdapter(Context context, int resource, ArrayList<Alarm> objects) {
+    public StatusesListAdapter(Context context, int resource, ArrayList<status> objects) {
         super(context, resource, objects);
         mContext = context;
         mResource = resource;
@@ -50,10 +51,10 @@ public class AlarmListAdapter extends ArrayAdapter<Alarm> {
     public View getView(int position, View convertView, ViewGroup parent) {
         //get the alarms information
         String name = getItem(position).getName();
-        Date time = getItem(position).getTime();
+        int value = getItem(position).getValue();
 
         //Create the alarm object with the information
-        Alarm person = new Alarm(name,time);
+        status person = new status(name,value);
 
         //create the view result for showing the animation
         final View result;
@@ -67,7 +68,7 @@ public class AlarmListAdapter extends ArrayAdapter<Alarm> {
             convertView = inflater.inflate(mResource, parent, false);
             holder= new ViewHolder();
             holder.name = (TextView) convertView.findViewById(R.id.textView1);
-            holder.date = (TextView) convertView.findViewById(R.id.textView2);
+            holder.value = (TextView) convertView.findViewById(R.id.textView2);
 
             result = convertView;
 
@@ -85,7 +86,7 @@ public class AlarmListAdapter extends ArrayAdapter<Alarm> {
         lastPosition = position;
 
         holder.name.setText(person.getName());
-        holder.date.setText(person.getStringTime());
+        holder.value.setText(person.getValue());
 
 
         return convertView;

@@ -91,10 +91,6 @@ public class AlarmModule extends Activity  {
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.button11:
-                intent = new Intent(this, MainActivity2.class);
-                startActivity(intent);
-                break;
             default:
                 break;
         }

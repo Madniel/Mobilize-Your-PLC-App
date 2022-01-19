@@ -16,7 +16,6 @@
         tools:layout_editor_absoluteX="28dp" />
 
 
-
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
@@ -24,19 +23,24 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        tools:layout_editor_absoluteX="-64dp"
-        tools:layout_editor_absoluteY="116dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-26dp">
 
     </ListView>
 
-    <Switch
-        android:id="@+id/simpleSwitch"
-        android:layout_width="202dp"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="207dp"
         android:layout_height="56dp"
+        android:layout_weight="66.6"
+        android:gravity="center"
+        android:text="TextView2"
+        android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/button10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView1"
-        app:layout_constraintTop_toTopOf="@+id/listView" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView1"
