@@ -103,15 +103,7 @@
             android:textColor="#ffffff"
             android:textSize="12sp"
             android:onClick="openMainPage"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/poppins_medium"
-            android:text="FORGOT PASSWORD ?"
-            android:textColor="#AF0504"
-            android:textSize="10.5sp" />
+
     </LinearLayout>
 
     <LinearLayout

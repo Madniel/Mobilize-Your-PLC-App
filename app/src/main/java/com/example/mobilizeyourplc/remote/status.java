@@ -2,16 +2,14 @@ package com.example.mobilizeyourplc.remote;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.Date;
-
 public class status {
     @SerializedName("status")
     private String name;
 
     @SerializedName("value")
-    private int value;
+    private boolean value;
 
-    public status(String name, int value) {
+    public status(String name, boolean value) {
         this.name = name;
         this.value = value;
 
@@ -23,7 +21,7 @@ public class status {
     public void setName(String name) {
         this.name = name;
     }
-    public void setValue(int value) {
+    public void setValue(boolean value) {
         this.value = value;
     }
 
@@ -31,7 +29,7 @@ public class status {
         return name;
     }
 
-    public int getValue() {
+    public boolean getValue() {
         return value;
     }
 }

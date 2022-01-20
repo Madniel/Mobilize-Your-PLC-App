@@ -25,9 +25,6 @@
             android:name=".DispenseTime"
             android:exported="false" />
         <activity
-            android:name=".PicksCompleted"
-            android:exported="false" />
-        <activity
             android:name=".SetParameters"
             android:exported="false" />
 

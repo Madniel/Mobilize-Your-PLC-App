@@ -51,10 +51,10 @@ public class StatusesListAdapter extends ArrayAdapter<status> {
     public View getView(int position, View convertView, ViewGroup parent) {
         //get the alarms information
         String name = getItem(position).getName();
-        int value = getItem(position).getValue();
+        boolean value = getItem(position).getValue();
 
         //Create the alarm object with the information
-        status status = new status(name,value);
+        status person = new status(name,value);
 
         //create the view result for showing the animation
         final View result;
@@ -85,8 +85,11 @@ public class StatusesListAdapter extends ArrayAdapter<status> {
         result.startAnimation(animation);
         lastPosition = position;
 
-        holder.name.setText(status.getName());
-        holder.value.setText(status.getValue());
+        holder.name.setText(person.getName());
+        if(person.getValue())
+            holder.value.setText("True");
+        else
+            holder.value.setText("False");
 
 
         return convertView;
