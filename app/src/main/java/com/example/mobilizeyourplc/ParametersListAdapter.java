@@ -52,12 +52,12 @@ public class ParametersListAdapter extends ArrayAdapter<parameter> {
     public View getView(int position, View convertView, ViewGroup parent) {
         //get the alarms information
         String Parameter = getItem(position).getParameter();
-        int deviceId = getItem(position).getDeviceId();
-        int value = getItem(position).getValue();
+        String deviceId = getItem(position).getDeviceId();
+        String value = getItem(position).getValue();
 
 
         //Create the alarm object with the information
-        parameter parameter = new parameter(Parameter, deviceId,  value);
+        parameter parameter = new parameter(Parameter, Integer.parseInt(deviceId),  Integer.parseInt(value));
 
         //create the view result for showing the animation
         final View result;
@@ -89,9 +89,9 @@ public class ParametersListAdapter extends ArrayAdapter<parameter> {
         result.startAnimation(animation);
         lastPosition = position;
 
-//        holder.value.setText(parameter.getValue());
-//        holder.Parameter.setText(parameter.getParameter());
-//        holder.deviceId.setText(parameter.getDeviceId());
+        holder.value.setText(parameter.getValue());
+        holder.Parameter.setText(parameter.getParameter());
+        holder.deviceId.setText(parameter.getDeviceId());
 
 
         return convertView;
