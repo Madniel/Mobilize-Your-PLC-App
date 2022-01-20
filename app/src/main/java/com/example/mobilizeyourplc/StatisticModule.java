@@ -15,7 +15,6 @@ import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 
@@ -69,7 +68,7 @@ public class StatisticModule extends Activity implements View.OnClickListener {
                     }
 
                     BarDataSet barDataSet = new BarDataSet(datas, "Picks completed");
-                    barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+                    barDataSet.setColor(Color.CYAN);
                     barDataSet.setValueTextColor(Color.BLACK);
                     barDataSet.setValueTextSize(16f);
 
