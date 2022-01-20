@@ -46,8 +46,6 @@ public class ControlModule extends Activity implements View.OnClickListener {
                 break;
             case R.id.send:
                 SendMessage();
-                intent = new Intent(this, ControlModule.class);
-                startActivity(intent);
                 break;
             default:
                 break;

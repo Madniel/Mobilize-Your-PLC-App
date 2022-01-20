@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -25,6 +26,13 @@ public class SetParameters extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_parameters);
+
+        Button four = (Button) findViewById(R.id.send);
+        four.setOnClickListener(this);
+        Button two = (Button) findViewById(R.id.button8);
+        two.setOnClickListener(this);
+
+
         api = ApiUtils.getApiClient();
         if(MainActivity2.selectedDevice != null)
         {

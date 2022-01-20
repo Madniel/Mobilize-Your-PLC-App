@@ -31,8 +31,6 @@ public class DispenseTime extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dispense_time);
 
-        Button five = (Button) findViewById(R.id.button6);
-        five.setOnClickListener(this); // calling onClick() method
         Button four = (Button) findViewById(R.id.button7);
         four.setOnClickListener(this);
 
@@ -98,12 +96,8 @@ public class DispenseTime extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.button6:
-                Intent intent = new Intent(this, FillTime.class);
-                startActivity(intent);
-                break;
             case R.id.button7:
-                intent = new Intent(this, CappingTime.class);
+                Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;
             default:

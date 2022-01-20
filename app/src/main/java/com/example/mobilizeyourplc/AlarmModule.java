@@ -18,18 +18,21 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class AlarmModule extends Activity  {
+public class AlarmModule extends Activity implements View.OnClickListener  {
 
     private static final String TAG = "AlarmModule";
     UserService api;
     ListView mListView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm_module);
 
-
+        Button ten = (Button) findViewById(R.id.button10);
+        ten.setOnClickListener(this);
 
         api = ApiUtils.getApiClient();
         if(MainActivity2.selectedDevice != null)
@@ -49,10 +52,6 @@ public class AlarmModule extends Activity  {
         }
 
 
-        Button ten = (Button) findViewById(R.id.button6);
-//        ten.setOnClickListener(this); // calling onClick() method
-        Button eleven = (Button) findViewById(R.id.button7);
-//        eleven.setOnClickListener(this);
 
         Log.d(TAG, "onCreate: Started.");
         mListView = (ListView) findViewById(R.id.listView);

@@ -30,8 +30,7 @@ public class CappingTime extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_capping_time);
-        Button five = (Button) findViewById(R.id.button6);
-        five.setOnClickListener(this); // calling onClick() method
+
         Button four = (Button) findViewById(R.id.button7);
         four.setOnClickListener(this);
         api = ApiUtils.getApiClient();
@@ -95,12 +94,8 @@ public class CappingTime extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.button6:
-                Intent intent = new Intent(this, DispenseTime.class);
-                startActivity(intent);
-                break;
             case R.id.button7:
-                intent = new Intent(this, StatisticModule.class);
+                Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;
             default:

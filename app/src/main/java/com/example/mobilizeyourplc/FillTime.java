@@ -95,10 +95,9 @@ public class FillTime extends Activity implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button7:
-                Intent intent = new Intent(this, DispenseTime.class);
+                Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;
-
             default:
                 break;
         }

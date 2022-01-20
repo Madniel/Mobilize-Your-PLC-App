@@ -31,8 +31,6 @@ public class StatisticModule extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistic_module);
 
-        Button five = (Button) findViewById(R.id.button6);
-        five.setOnClickListener(this); // calling onClick() method
         Button four = (Button) findViewById(R.id.button7);
         four.setOnClickListener(this);
 
@@ -98,12 +96,8 @@ public class StatisticModule extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.button6:
-                Intent intent = new Intent(this, CappingTime.class);
-                startActivity(intent);
-                break;
             case R.id.button7:
-                intent = new Intent(this, MainActivity2.class);
+                Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;
             default:

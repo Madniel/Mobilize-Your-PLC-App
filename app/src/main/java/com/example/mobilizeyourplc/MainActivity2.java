@@ -41,6 +41,12 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
         three.setOnClickListener(this);
         Button twelve = (Button) findViewById(R.id.button12);
         twelve.setOnClickListener(this);
+        Button six = (Button) findViewById(R.id.button6);
+        six.setOnClickListener(this);
+        Button ten = (Button) findViewById(R.id.button10);
+        ten.setOnClickListener(this);
+        Button fifteen = (Button) findViewById(R.id.button15);
+        fifteen.setOnClickListener(this);
 
         selectedDevice = null;
         api = ApiUtils.getApiClient();
@@ -125,6 +131,18 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
                 break;
             case R.id.button3:
                 intent = new Intent(this, ControlModule.class);
+                startActivity(intent);
+                break;
+            case R.id.button15:
+                intent = new Intent(this, CappingTime.class);
+                startActivity(intent);
+                break;
+            case R.id.button10:
+                intent = new Intent(this, DispenseTime.class);
+                startActivity(intent);
+                break;
+            case R.id.button6:
+                intent = new Intent(this, FillTime.class);
                 startActivity(intent);
                 break;
             default:
