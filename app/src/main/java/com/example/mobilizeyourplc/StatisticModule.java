@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.mobilizeyourplc.remote.ApiUtils;
@@ -29,6 +30,12 @@ public class StatisticModule extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistic_module);
+
+        Button five = (Button) findViewById(R.id.button6);
+        five.setOnClickListener(this); // calling onClick() method
+        Button four = (Button) findViewById(R.id.button7);
+        four.setOnClickListener(this);
+
         api = ApiUtils.getApiClient();
         if(MainActivity2.selectedDevice != null)
         {
@@ -60,10 +67,10 @@ public class StatisticModule extends Activity implements View.OnClickListener {
                     for (int i = 0; i < list.size(); i++){
                         int value = list.get(i).getValue();
                         String info = list.get(i).getStringTime();
-                        datas.add(new BarEntry(Float.parseFloat(info), value));
+                        datas.add(new BarEntry(i, value));
                     }
 
-                    BarDataSet barDataSet = new BarDataSet(datas, "Capping Time");
+                    BarDataSet barDataSet = new BarDataSet(datas, "Picks completed");
                     barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
                     barDataSet.setValueTextColor(Color.BLACK);
                     barDataSet.setValueTextSize(16f);
@@ -92,7 +99,7 @@ public class StatisticModule extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button6:
-                Intent intent = new Intent(this, MainActivity.class);
+                Intent intent = new Intent(this, CappingTime.class);
                 startActivity(intent);
                 break;
             case R.id.button7:

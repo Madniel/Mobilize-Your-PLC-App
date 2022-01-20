@@ -28,13 +28,13 @@ public class ControlModule extends Activity implements View.OnClickListener {
 
         inputText = (EditText) findViewById(R.id.input);
 
-        Button eight = (Button) findViewById(R.id.button6);
+        Button eight = (Button) findViewById(R.id.send);
         eight.setOnClickListener(this); // calling onClick() method
-        Button nine = (Button) findViewById(R.id.button7);
+
+        Button nine = (Button) findViewById(R.id.button8);
         nine.setOnClickListener(this);
+
         api = ApiUtils.getApiClient();
-
-
     }
 
     @Override
@@ -44,12 +44,10 @@ public class ControlModule extends Activity implements View.OnClickListener {
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.button9:
-                intent = new Intent(this, MainActivity2.class);
-                startActivity(intent);
-                break;
             case R.id.send:
                 SendMessage();
+                intent = new Intent(this, ControlModule.class);
+                startActivity(intent);
                 break;
             default:
                 break;

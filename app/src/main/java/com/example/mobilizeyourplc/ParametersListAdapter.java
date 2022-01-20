@@ -57,7 +57,7 @@ public class ParametersListAdapter extends ArrayAdapter<parameter> {
 
 
         //Create the alarm object with the information
-        parameter person = new parameter(Parameter, deviceId,  value);
+        parameter parameter = new parameter(Parameter, deviceId,  value);
 
         //create the view result for showing the animation
         final View result;
@@ -70,9 +70,9 @@ public class ParametersListAdapter extends ArrayAdapter<parameter> {
             LayoutInflater inflater = LayoutInflater.from(mContext);
             convertView = inflater.inflate(mResource, parent, false);
             holder= new ViewHolder();
-            holder.deviceId = (TextView) convertView.findViewById(R.id.textView1);
+            holder.deviceId = (TextView) convertView.findViewById(R.id.textView3);
             holder.value = (TextView) convertView.findViewById(R.id.textView2);
-            holder.Parameter = (TextView) convertView.findViewById(R.id.textView3);
+            holder.Parameter = (TextView) convertView.findViewById(R.id.textView1);
 
             result = convertView;
 
@@ -89,9 +89,9 @@ public class ParametersListAdapter extends ArrayAdapter<parameter> {
         result.startAnimation(animation);
         lastPosition = position;
 
-        holder.deviceId.setText(person.getDeviceId());
-        holder.value.setText(person.getValue());
-        holder.Parameter.setText(person.getValue());
+//        holder.value.setText(parameter.getValue());
+//        holder.Parameter.setText(parameter.getParameter());
+//        holder.deviceId.setText(parameter.getDeviceId());
 
 
         return convertView;

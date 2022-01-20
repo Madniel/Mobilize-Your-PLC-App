@@ -1,10 +1,12 @@
 package com.example.mobilizeyourplc;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobilizeyourplc.remote.ApiUtils;
 import com.example.mobilizeyourplc.remote.UserService;
@@ -21,13 +23,17 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class CappingTime extends AppCompatActivity {
+public class CappingTime extends Activity implements View.OnClickListener {
 
     UserService api;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_capping_time);
+        Button five = (Button) findViewById(R.id.button6);
+        five.setOnClickListener(this); // calling onClick() method
+        Button four = (Button) findViewById(R.id.button7);
+        four.setOnClickListener(this);
         api = ApiUtils.getApiClient();
         if(MainActivity2.selectedDevice != null)
         {
@@ -59,7 +65,7 @@ public class CappingTime extends AppCompatActivity {
                     for (int i = 0; i < list.size(); i++){
                         int value = list.get(i).getValue();
                         String info = list.get(i).getStringTime();
-                        datas.add(new BarEntry(Float.parseFloat(info), value));
+                        datas.add(new BarEntry(i, value));
                     }
 
                     BarDataSet barDataSet = new BarDataSet(datas, "Capping Time");
@@ -85,5 +91,20 @@ public class CappingTime extends AppCompatActivity {
                 Toast.makeText(CappingTime.this,"Failed to retrieve data from the server.", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.button6:
+                Intent intent = new Intent(this, DispenseTime.class);
+                startActivity(intent);
+                break;
+            case R.id.button7:
+                intent = new Intent(this, StatisticModule.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
     }
 }

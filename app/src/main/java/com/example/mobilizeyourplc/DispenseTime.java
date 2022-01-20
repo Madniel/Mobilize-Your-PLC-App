@@ -1,10 +1,12 @@
 package com.example.mobilizeyourplc;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobilizeyourplc.remote.ApiUtils;
 import com.example.mobilizeyourplc.remote.UserService;
@@ -21,13 +23,19 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class DispenseTime extends AppCompatActivity {
+public class DispenseTime extends Activity implements View.OnClickListener {
 
     UserService api;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dispense_time);
+
+        Button five = (Button) findViewById(R.id.button6);
+        five.setOnClickListener(this); // calling onClick() method
+        Button four = (Button) findViewById(R.id.button7);
+        four.setOnClickListener(this);
+
         api = ApiUtils.getApiClient();
         if(MainActivity2.selectedDevice != null)
         {
@@ -59,10 +67,10 @@ public class DispenseTime extends AppCompatActivity {
                     for (int i = 0; i < list.size(); i++){
                         int value = list.get(i).getValue();
                         String info = list.get(i).getStringTime();
-                        datas.add(new BarEntry(Float.parseFloat(info), value));
+                        datas.add(new BarEntry(i, value));
                     }
 
-                    BarDataSet barDataSet = new BarDataSet(datas, "Capping Time");
+                    BarDataSet barDataSet = new BarDataSet(datas, "Dispense Time");
                     barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
                     barDataSet.setValueTextColor(Color.BLACK);
                     barDataSet.setValueTextSize(16f);
@@ -85,5 +93,21 @@ public class DispenseTime extends AppCompatActivity {
                 Toast.makeText(DispenseTime.this,"Failed to retrieve data from the server.", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.button6:
+                Intent intent = new Intent(this, FillTime.class);
+                startActivity(intent);
+                break;
+            case R.id.button7:
+                intent = new Intent(this, CappingTime.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
     }
 }

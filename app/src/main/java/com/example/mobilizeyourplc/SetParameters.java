@@ -1,10 +1,11 @@
 package com.example.mobilizeyourplc;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobilizeyourplc.remote.ApiUtils;
 import com.example.mobilizeyourplc.remote.UserService;
@@ -16,7 +17,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SetParameters extends AppCompatActivity {
+public class SetParameters extends Activity implements View.OnClickListener {
+    ArrayList<parameter> list = new ArrayList<parameter>();
     UserService api;
     ListView mListView;
     @Override
@@ -93,5 +95,22 @@ public class SetParameters extends AppCompatActivity {
     }
 
 
-
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.send:
+                SetParameters(list);
+                Intent intent = new Intent(this, SetParameters.class);
+                startActivity(intent);
+                break;
+            case R.id.button8:
+                intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                intent = new Intent(this, SetParameters.class);
+                startActivity(intent);
+                break;
+        }
+    }
 }

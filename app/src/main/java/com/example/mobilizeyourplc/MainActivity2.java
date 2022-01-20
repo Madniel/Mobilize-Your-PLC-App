@@ -39,6 +39,8 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
         two.setOnClickListener(this);
         Button three = (Button) findViewById(R.id.button3);
         three.setOnClickListener(this);
+        Button twelve = (Button) findViewById(R.id.button12);
+        twelve.setOnClickListener(this);
 
         selectedDevice = null;
         api = ApiUtils.getApiClient();
@@ -114,7 +116,7 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.button4:
-                intent = new Intent(this, FillTime.class);
+                intent = new Intent(this, StatisticModule.class);
                 startActivity(intent);
                 break;
             case R.id.button2:
