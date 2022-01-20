@@ -87,9 +87,9 @@ public class StatusesListAdapter extends ArrayAdapter<status> {
 
         holder.name.setText(person.getName());
         if(person.getValue())
-            holder.value.setText("True");
+            holder.value.setText("ON");
         else
-            holder.value.setText("False");
+            holder.value.setText("OFF");
 
 
         return convertView;
