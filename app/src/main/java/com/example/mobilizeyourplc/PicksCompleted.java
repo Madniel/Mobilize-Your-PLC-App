@@ -27,7 +27,7 @@ public class PicksCompleted extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_picks_completed);
+        setContentView(R.layout.activity_statistic_module);
         api = ApiUtils.getApiClient();
         if(MainActivity2.selectedDevice != null)
         {

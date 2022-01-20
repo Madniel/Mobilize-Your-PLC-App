@@ -1,10 +1,10 @@
 package com.example.mobilizeyourplc;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobilizeyourplc.remote.ApiUtils;
 import com.example.mobilizeyourplc.remote.UserService;
@@ -52,7 +52,7 @@ public class SetParameters extends AppCompatActivity {
                     ArrayList<parameter> list = response.body();
 
                     //TODO listę parametrów wyświetlić na widoku.
-                    ParametersListAdapter adapter = new ParametersListAdapter(SetParameters.this, R.layout.activity_alarm_module, list);
+                    ParametersListAdapter adapter = new ParametersListAdapter(SetParameters.this, R.layout.activity_set_parameters_list, list);
                     mListView.setAdapter(adapter);
                 }
                 else
@@ -91,5 +91,7 @@ public class SetParameters extends AppCompatActivity {
             });
         }
     }
+
+
 
 }

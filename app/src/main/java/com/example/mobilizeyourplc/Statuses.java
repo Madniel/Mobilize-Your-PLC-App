@@ -52,7 +52,7 @@ public class Statuses extends AppCompatActivity {
                 {
                     ArrayList<status> list = response.body();
                     //TODO wyświetlić listę statusów
-                    StatusesListAdapter adapter = new StatusesListAdapter(Statuses.this, R.layout.activity_alarm_module, list);
+                    StatusesListAdapter adapter = new StatusesListAdapter(Statuses.this, R.layout.activity_statuses_list, list);
                     mListView.setAdapter(adapter);
                 }
                 else

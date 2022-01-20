@@ -68,7 +68,7 @@ public class AlarmModule extends Activity  {
                     //Add the Alarm objects to an ArrayList
                     ArrayList<Alarm> peopleList = response.body();
 
-                    AlarmListAdapter adapter = new AlarmListAdapter(AlarmModule.this, R.layout.activity_alarm_module, peopleList);
+                    AlarmListAdapter adapter = new AlarmListAdapter(AlarmModule.this, R.layout.activity_alarm_module_list, peopleList);
                     mListView.setAdapter(adapter);
                 }
                 else

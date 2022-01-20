@@ -10,52 +10,21 @@
         android:id="@+id/button10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="683dp"
         android:text="Log Out"
-        app:layout_constraintBottom_toBottomOf="@+id/listView"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="28dp" />
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/listView"
+        tools:ignore="MissingConstraints" />
 
     <ListView
-        android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-26dp">
+        android:layout_alignParentStart="true"
+        android:id="@+id/listView"/>
 
-    </ListView>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="207dp"
-        android:layout_height="56dp"
-        android:layout_weight="66.6"
-        android:gravity="center"
-        android:text="TextView2"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/button10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView1"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="207dp"
-        android:layout_height="56dp"
-        android:layout_marginEnd="204dp"
-        android:layout_weight="66.6"
-        android:gravity="center"
-        android:text="TextView1"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/button10"
-        app:layout_constraintEnd_toEndOf="@+id/listView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -54,7 +54,7 @@ public class StatusesListAdapter extends ArrayAdapter<status> {
         int value = getItem(position).getValue();
 
         //Create the alarm object with the information
-        status person = new status(name,value);
+        status status = new status(name,value);
 
         //create the view result for showing the animation
         final View result;
@@ -85,8 +85,8 @@ public class StatusesListAdapter extends ArrayAdapter<status> {
         result.startAnimation(animation);
         lastPosition = position;
 
-        holder.name.setText(person.getName());
-        holder.value.setText(person.getValue());
+        holder.name.setText(status.getName());
+        holder.value.setText(status.getValue());
 
 
         return convertView;

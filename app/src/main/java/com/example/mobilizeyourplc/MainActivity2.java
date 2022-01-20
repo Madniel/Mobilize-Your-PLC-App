@@ -105,8 +105,12 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
         }
 
         switch (v.getId()) {
+            case R.id.button12:
+                Intent intent = new Intent(this, SetParameters.class);
+                startActivity(intent);
+                break;
             case R.id.button5:
-                Intent intent = new Intent(this, MainActivity.class);
+                intent = new Intent(this, Statuses.class);
                 startActivity(intent);
                 break;
             case R.id.button4:
